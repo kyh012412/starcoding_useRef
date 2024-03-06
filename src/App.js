@@ -6,13 +6,19 @@ function App() {
   const inputRef = useRef();
 
   useEffect(()=>{
-    console.log(inputRef);
+    // console.log(inputRef);
+    inputRef.current.focus();    
   },[])
+
+  const handleClick = () =>{
+    alert(`환영합니다. ${inputRef.current.value}!`);
+    inputRef.current.focus();    
+  }
 
   return (
     <div>
       <input ref={inputRef} type="text" placeholder='username'/>
-      <button>로그인</button>
+      <button onClick={handleClick}>로그인</button>
     </div>
   );
 }
