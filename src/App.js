@@ -2,16 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [count,setCount] = useState(0);
-  const [renderCount,setRenderCount] = useState(1);
+  const [count,setCount] = useState(1);
+  const ref = useRef(1);
   
   //countVar는 랜더링이 다시 될때 초기화가됨
   let countVar = 0;
 
   useEffect(()=>{
     console.log('🎉렌더링...');
-    console.log(renderCount+1);
-    setRenderCount(renderCount+1);
+    ref.current = ref.current+1;
+    console.log('ref count : '+ref.current);
   })
 
   return (
