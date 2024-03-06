@@ -20,4 +20,10 @@ State의 변화 -> 리렌더링 -> 그래도 Ref의 값은 유지됨
 input요소 클릭없이 focus를 줄 수 있음
 (바닐라 js 느낌)
 
-
+### Dom요소에 접근
+```js
+const ref = useRef(value);
+```
+```html
+<input ref={ref}/>
+```

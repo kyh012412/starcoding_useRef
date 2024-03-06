@@ -1,25 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 
+//자동 focus하려는 중
 function App() {
-  const [count,setCount] = useState(1);
-  const ref = useRef(1);
-  
-  //countVar는 랜더링이 다시 될때 초기화가됨
-  let countVar = 0;
+  const inputRef = useRef();
 
   useEffect(()=>{
-    console.log('🎉렌더링...');
-    ref.current = ref.current+1;
-    console.log('ref count : '+ref.current);
-  })
+    console.log(inputRef);
+  },[])
 
   return (
     <div>
-      <p>Count: {count}</p>
-      <button onClick={()=>{
-        setCount(count+1)
-      }}>count 올리기</button>
+      <input ref={inputRef} type="text" placeholder='username'/>
+      <button>로그인</button>
     </div>
   );
 }
